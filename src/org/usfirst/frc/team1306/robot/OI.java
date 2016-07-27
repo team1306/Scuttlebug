@@ -1,6 +1,8 @@
 package org.usfirst.frc.team1306.robot;
 
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import org.usfirst.frc.team1306.robot.commands.ExampleCommand;
 
 /**
@@ -8,6 +10,13 @@ import org.usfirst.frc.team1306.robot.commands.ExampleCommand;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	
+	private final XboxController primaryController;
+	private final XboxController secondaryController;
+	
+	private final Button pbuttonA;
+	private final Button pbuttonB;
+	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -34,5 +43,14 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+	public OI() {
+		primaryController = new XboxController(RobotMap.PRIMARY_PORT);
+		secondaryController = new XboxController(RobotMap.SECONDARY_PORT);
+		
+		pbuttonA = new JoystickButton(primaryController, XboxController.A);
+		pbuttonB = new JoystickButton(primaryController, XboxController.B);
+		
+		//pbuttonA.whenPressed(new commandName());
+	}
 }
 
