@@ -50,6 +50,8 @@ public class OI {
 		pbuttonA = new JoystickButton(primaryController, XboxController.A);
 		pbuttonB = new JoystickButton(primaryController, XboxController.B);
 		
+		pbuttonA.whenPressed(new ExampleCommand());
+		
 		//pbuttonA.whenPressed(new commandName());
 	}
 }
