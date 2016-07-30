@@ -17,6 +17,7 @@ public class OI {
 	
 	private final Button pbuttonA;
 	private final Button pbuttonB;
+	private final Button pbuttonRB;
 	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
@@ -50,6 +51,7 @@ public class OI {
 		
 		pbuttonA = new JoystickButton(primaryController, XboxController.A);
 		pbuttonB = new JoystickButton(primaryController, XboxController.B);
+		pbuttonRB = new JoystickButton(primaryController, XboxController.RB);
 		
 		pbuttonA.whenPressed(new TestCommand());
 		
