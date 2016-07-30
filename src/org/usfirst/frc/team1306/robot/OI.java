@@ -18,7 +18,21 @@ public class OI {
 	
 	private final Button pbuttonA;
 	private final Button pbuttonB;
+	private final Button pbuttonX;
+	private final Button pbuttonY;
 	private final Button pbuttonRB;
+	private final Button pbuttonLB;
+	private final Button pbuttonBack;
+	private final Button pbuttonStart;	
+	
+	private final Button sbuttonA;
+	private final Button sbuttonB;
+	private final Button sbuttonX;
+	private final Button sbuttonY;
+	private final Button sbuttonRB;
+	private final Button sbuttonLB;
+	private final Button sbuttonBack;
+	private final Button sbuttonStart;
 	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
@@ -52,7 +66,21 @@ public class OI {
 		
 		pbuttonA = new JoystickButton(primaryController, XboxController.A);
 		pbuttonB = new JoystickButton(primaryController, XboxController.B);
+		pbuttonX = new JoystickButton(primaryController, XboxController.X);
+		pbuttonY = new JoystickButton(primaryController, XboxController.Y);
 		pbuttonRB = new JoystickButton(primaryController, XboxController.RB);
+		pbuttonLB = new JoystickButton(primaryController, XboxController.LB);
+		pbuttonBack = new JoystickButton(primaryController, XboxController.BACK);
+		pbuttonStart = new JoystickButton(primaryController, XboxController.START);
+		
+		sbuttonA = new JoystickButton(primaryController, XboxController.A);
+		sbuttonB = new JoystickButton(primaryController, XboxController.B);
+		sbuttonX = new JoystickButton(primaryController, XboxController.X);
+		sbuttonY = new JoystickButton(primaryController, XboxController.Y);
+		sbuttonRB = new JoystickButton(primaryController, XboxController.RB);
+		sbuttonLB = new JoystickButton(primaryController, XboxController.LB);
+		sbuttonBack = new JoystickButton(primaryController, XboxController.BACK);
+		sbuttonStart = new JoystickButton(primaryController, XboxController.START);
 		
 		pbuttonA.whenPressed(new TestCommand());
 		pbuttonB.whenPressed(new somethingNotTestCommandButSomethingElse());
