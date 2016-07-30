@@ -4,7 +4,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team1306.robot.Robot;
 
 /**
- * 
+ * This class is used to experiment with commands and the methods within them...
+ * -
  * @author Jackson Goth
  *
  */
