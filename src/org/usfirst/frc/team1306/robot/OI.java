@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team1306.robot.commands.ExampleCommand;
+import org.usfirst.frc.team1306.robot.commands.TestCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -50,7 +51,7 @@ public class OI {
 		pbuttonA = new JoystickButton(primaryController, XboxController.A);
 		pbuttonB = new JoystickButton(primaryController, XboxController.B);
 		
-		pbuttonA.whenPressed(new ExampleCommand());
+		pbuttonA.whenPressed(new TestCommand());
 		
 		//pbuttonA.whenPressed(new commandName());
 	}
