@@ -7,7 +7,6 @@ public class SmartDashboardUpdate extends CommandBase {
 
 	@Override
 	protected void initialize() {
-		
 		SmartDashboard.putString("SmartDashboard Initialized!!!!!!!", "it works?");
 	}
 
