@@ -7,7 +7,7 @@ import org.usfirst.frc.team1306.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1306.robot.commands.TestCommand;
 import org.usfirst.frc.team1306.robot.commands.somethingNotTestCommandButSomethingElse;
 
-/**
+/**j
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
