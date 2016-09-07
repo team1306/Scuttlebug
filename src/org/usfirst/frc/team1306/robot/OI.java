@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1306.robot;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -84,6 +85,35 @@ public class OI {
 		pbuttonA.whenPressed(new TestCommand());
 		
 		//pbuttonA.whenPressed(new commandName());
+
+	}
+	
+	/*
+	 * Returns y axis value of right joystick put the a changeable multiplier for increased or decreased sensitivity with a deadband
+	 */
+	public double getRightVel() {
+		return Math.pow(deadband(primaryController.getY(Hand.kRight)), Constants.JOYSTICK_MULTIPLIER);
+	}
+	
+	/*
+	 * Returns y axis value of left joystick put the a changeable multiplier for increased or decreased sensitivity with a deadband
+	 */
+	public double getLeftVel() {
+		return Math.pow(deadband(primaryController.getY(Hand.kLeft)), Constants.JOYSTICK_MULTIPLIER);
+	}
+	
+	/*
+	 * Applies deadband to joystick values to prevent false readings when joystick is idle.  It prevents very small changes to 
+	 * an idle joystick to trigger anything.
+	 */
+	private static double deadband(double value) {
+		if (value < -Constants.DEADBAND) {
+			return (value + Constants.DEADBAND) / (1.0 - Constants.DEADBAND);
+		}
+		if (value > Constants.DEADBAND) {
+			return (value - Constants.DEADBAND) / (1.0 - Constants.DEADBAND);
+		}
+		return 0;
 	}
 }
 
