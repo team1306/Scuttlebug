@@ -3,7 +3,6 @@ package org.usfirst.frc.team1306.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team1306.robot.Robot;
 
 /**
  * A basic command used to learn how commands work

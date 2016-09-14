@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team1306.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1306.robot.commands.TestCommand;
 
 /**j
