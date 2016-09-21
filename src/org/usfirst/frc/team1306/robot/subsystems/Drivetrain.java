@@ -14,15 +14,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivetrain extends Subsystem {
 	private final CANTalon[] motors;	
-	private final CANTalon leftmotor1, leftmotor2;
-	private final CANTalon rightmotor1, rightmotor2;
+	private final CANTalon leftmotor1;
+	private final CANTalon rightmotor1;
 	
 	public Drivetrain() {
 		leftmotor1 = new CANTalon(RobotMap.LEFT_TALON_1_PORT);
-		leftmotor2 = new CANTalon(RobotMap.LEFT_TALON_2_PORT);
+		//leftmotor2 = new CANTalon(RobotMap.LEFT_TALON_2_PORT);
 		rightmotor1 = new CANTalon(RobotMap.RIGHT_TALON_1_PORT);
-		rightmotor2 = new CANTalon(RobotMap.RIGHT_TALON_2_PORT);
-		motors = new CANTalon[] {leftmotor1, leftmotor2, rightmotor1, rightmotor2};
+		//rightmotor2 = new CANTalon(RobotMap.RIGHT_TALON_2_PORT);
+		motors = new CANTalon[] {leftmotor1, rightmotor1};
 	}
 	
 	/**
@@ -50,6 +50,12 @@ public class Drivetrain extends Subsystem {
 	
 	public void stopMotor(int motor) {
 		motors[motor].set(0.0);
+	}
+	
+	public void stopAll() {
+		for (int i = 0; i < motors.length; i++) {
+			motors[i].set(0.0);
+		}
 	}
 
 	@Override

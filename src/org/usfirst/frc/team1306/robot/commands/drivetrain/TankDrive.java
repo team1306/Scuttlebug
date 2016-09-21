@@ -16,20 +16,17 @@ public class TankDrive extends CommandBase {
 
 	@Override
 	protected void execute() {
-		// TODO Auto-generated method stub
-		
+		drivetrain.tankDrive(oi.getLeftVel(), oi.getRightVel());
 	}
 
 	@Override
 	protected boolean isFinished() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	protected void end() {
-		// TODO Auto-generated method stub
-		
+		drivetrain.stopAll();
 	}
 
 	@Override
