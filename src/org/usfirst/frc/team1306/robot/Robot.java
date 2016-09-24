@@ -2,6 +2,7 @@
 package org.usfirst.frc.team1306.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -9,6 +10,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team1306.robot.commands.CommandBase;
 import org.usfirst.frc.team1306.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1306.robot.commands.SmartDashboardUpdate;
+import org.usfirst.frc.team1306.robot.commands.autonomous.AutonomousCommand;
+import org.usfirst.frc.team1306.robot.commands.autonomous.Direction;
+
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -40,11 +44,14 @@ public class Robot extends IterativeRobot {
         smartDashboard = new SmartDashboardUpdate();
         smartDashboard.start();
 		
-        //chooser = new SendableChooser();
+        chooser = new SendableChooser();
         //chooser.addDefault("Default Auto", new ExampleCommand());
-//        chooser.addObject("My Auto", new MyAutoCommand());
-        //SmartDashboard.putData("Auto mode", chooser);
-        SmartDashboard.putNumber("Test", 5);
+        chooser.addObject("Forward Slow", new AutonomousCommand(Direction.FORWARD_SLOW));
+        chooser.addObject("Forward Fast", new AutonomousCommand(Direction.FORWARD_FAST));
+        chooser.addObject("Backward Slow", new AutonomousCommand(Direction.BACKWARD_SLOW));
+        chooser.addObject("Backward Fast", new AutonomousCommand(Direction.BACKWARD_FAST));
+        SmartDashboard.putData("Auto mode", chooser);
+
     }
 	
 	/**
