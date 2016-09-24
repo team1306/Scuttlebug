@@ -87,6 +87,10 @@ public class OI {
 
 	}
 	
+	
+	public enum axis {x, y};
+	public enum controller {p, s};
+	public enum trigger {l, r};
 	/**
 	 * Returns y axis value of right joystick
 	 * @param axis
@@ -94,8 +98,7 @@ public class OI {
 	 * @return
 	 * 		Returns the value from the selected axis
 	 */
-	public enum axis {x, y};
-	public double getRightVal(axis axis) {
+	public double getRightJoyVal(controller controller, axis axis) {
 		return Math.pow(deadband(primaryController.getY(Hand.kRight)), Constants.JOYSTICK_MULTIPLIER);
 	}
 	
@@ -106,8 +109,46 @@ public class OI {
 	 * @return
 	 * 		Returns the value from the selected axis
 	 */
-	public double getLeftVal(axis axis) {
+	public double getLeftJoyVal(controller controller, axis axis) {
 		return Math.pow(deadband(primaryController.getY(Hand.kLeft)), Constants.JOYSTICK_MULTIPLIER);
+	}
+	
+	/**
+	 * Returns the value of the specified triger (from -1.0 to 1.0)
+	 * @param controller
+	 * 		Which controller to read (p or s)
+	 * @param trigger
+	 * 		Which trigger to read (l or r)
+	 * @return
+	 * 		Returns the specified value
+	 */
+	public double getTriggerVal(controller controller, trigger trigger) {
+		double returnVal = 0.0;
+		switch (controller){
+			case p:
+				//Primary controller
+				switch (trigger) {
+					case l:
+						returnVal = primaryController.getLT();
+					break;
+					case r:
+						returnVal = primaryController.getRT();
+					break;
+				}
+			break;
+			case s:
+				//Secondary controller
+				switch (trigger) {
+					case l:
+						returnVal = secondaryController.getLT();
+					break;
+					case r:
+						returnVal = secondaryController.getRT();
+					break;
+				}
+			break;
+		}
+		return returnVal;
 	}
 	
 	/*

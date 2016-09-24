@@ -1,6 +1,6 @@
 package org.usfirst.frc.team1306.robot.commands.drivetrain;
 
-import org.usfirst.frc.team1306.robot.OI.axis;
+import org.usfirst.frc.team1306.robot.OI.*;
 import org.usfirst.frc.team1306.robot.commands.CommandBase;
 
 public class TankDrive extends CommandBase {
@@ -17,7 +17,7 @@ public class TankDrive extends CommandBase {
 
 	@Override
 	protected void execute() {
-		drivetrain.tankDrive(oi.getLeftVal(axis.y), oi.getRightVal(axis.y));
+		drivetrain.tankDrive(oi.getLeftJoyVal(controller.p, axis.y), oi.getRightJoyVal(controller.p, axis.y));
 	}
 
 	@Override
