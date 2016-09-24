@@ -87,17 +87,26 @@ public class OI {
 
 	}
 	
-	/*
-	 * Returns y axis value of right joystick put the a changeable multiplier for increased or decreased sensitivity with a deadband
+	/**
+	 * Returns y axis value of right joystick
+	 * @param axis
+	 * 		X or Y axis to return
+	 * @return
+	 * 		Returns the value from the selected axis
 	 */
-	public double getRightVel() {
+	public enum axis {x, y};
+	public double getRightVal(axis axis) {
 		return Math.pow(deadband(primaryController.getY(Hand.kRight)), Constants.JOYSTICK_MULTIPLIER);
 	}
 	
-	/*
-	 * Returns y axis value of left joystick put the a changeable multiplier for increased or decreased sensitivity with a deadband
+	/**
+	 * Returns y axis value of left joystick
+	 * @param axis
+	 * 		X or Y axis to return
+	 * @return
+	 * 		Returns the value from the selected axis
 	 */
-	public double getLeftVel() {
+	public double getLeftVal(axis axis) {
 		return Math.pow(deadband(primaryController.getY(Hand.kLeft)), Constants.JOYSTICK_MULTIPLIER);
 	}
 	
