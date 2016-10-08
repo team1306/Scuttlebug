@@ -186,7 +186,7 @@ public class OI {
 	}
 	
 	/**
-	 * Returns the value of the specified triger (from -1.0 to 1.0)
+	 * Returns the value of the specified trigger (from -1.0 to 1.0)
 	 * @param controller
 	 * 		Which controller to read (p or s)
 	 * @param trigger
