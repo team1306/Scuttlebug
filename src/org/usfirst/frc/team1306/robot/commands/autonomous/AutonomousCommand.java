@@ -8,7 +8,6 @@ public class AutonomousCommand extends CommandGroup{
 	public AutonomousCommand(Direction direction) {
 		
 		addSequential(direction.getDriveCommand());
-		SmartDashboard.putString("string", "test");
 		
 	}
 }

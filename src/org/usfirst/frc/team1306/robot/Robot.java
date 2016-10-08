@@ -40,9 +40,6 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	
     	CommandBase.init();
-    	
-        smartDashboard = new SmartDashboardUpdate();
-        smartDashboard.start();
 		
         chooser = new SendableChooser();
         //chooser.addDefault("Default Auto", new ExampleCommand());
@@ -51,7 +48,9 @@ public class Robot extends IterativeRobot {
         chooser.addObject("Backward Slow", new AutonomousCommand(Direction.BACKWARD_SLOW));
         chooser.addObject("Backward Fast", new AutonomousCommand(Direction.BACKWARD_FAST));
         SmartDashboard.putData("Auto mode", chooser);
-
+        
+        smartDashboard = new SmartDashboardUpdate();
+        smartDashboard.start();
     }
 	
 	/**

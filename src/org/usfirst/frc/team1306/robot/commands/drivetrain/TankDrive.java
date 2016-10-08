@@ -17,7 +17,9 @@ public class TankDrive extends CommandBase {
 
 	@Override
 	protected void execute() {
-		drivetrain.tankDrive(oi.getLeftJoyVal(controller.p, axis.y), oi.getRightJoyVal(controller.p, axis.y));
+		
+		drivetrain.tankDrive(oi.getTriggerVal(controller.p, trigger.r), oi.getTriggerVal(controller.p, trigger.l));
+		drivetrain.tankDrive(oi.getRightJoyVal(controller.p, axis.y), oi.getLeftJoyVal(controller.p, axis.y));
 	}
 
 	@Override
