@@ -91,12 +91,15 @@ public class OI {
 	public enum axis {x, y};
 	public enum controller {p, s};
 	public enum trigger {l, r};
+	public enum joystick {l, r};
 	/**
 	 * Returns y axis value of right joystick
 	 * @param axis
 	 * 		X or Y axis to return
 	 * @return
 	 * 		Returns the value from the selected axis
+	 * @deprecated 
+	 * 		Use getJoyVal instead
 	 */
 	public double getRightJoyVal(controller controller, axis axis) {
 		return Math.pow(deadband(primaryController.getY(Hand.kRight)), Constants.JOYSTICK_MULTIPLIER);
@@ -108,9 +111,78 @@ public class OI {
 	 * 		X or Y axis to return
 	 * @return
 	 * 		Returns the value from the selected axis
+	 * @deprecated 
+	 * 		Use getJoyVal instead
 	 */
 	public double getLeftJoyVal(controller controller, axis axis) {
 		return Math.pow(deadband(primaryController.getY(Hand.kLeft)), Constants.JOYSTICK_MULTIPLIER);
+	}
+	
+	/**
+	 * Returns the joystick value (from -1.0 to 1.0) for the specified controller's joystick's axis
+	 * @param controller
+	 * 		The controller that you would like to read from (p or s)
+	 * @param joystick
+	 * 		The joystick that you would like to read from (l or r)
+	 * @param axis
+	 * 		The axis that you would like to read (x or y)
+	 * @return
+	 * 		Returns the value of the specified controller's joystick's axis (from -1.0 to 1.0)
+	 */
+	
+	public double getJoyVal(controller controller, joystick joystick, axis axis) {
+		double returnVal = 0.0;
+		switch (controller) {
+			case p:
+				switch (joystick) {
+					case l:
+						switch (axis) {
+							case x:
+								returnVal = Math.pow(deadband(primaryController.getX(Hand.kLeft)), Constants.JOYSTICK_MULTIPLIER);
+							break;
+							case y:
+								returnVal = Math.pow(deadband(primaryController.getY(Hand.kLeft)), Constants.JOYSTICK_MULTIPLIER);
+							break;
+						}
+					break;
+					case r:
+						switch (axis) {
+						case x:
+							returnVal = Math.pow(deadband(primaryController.getX(Hand.kRight)), Constants.JOYSTICK_MULTIPLIER);
+						break;
+						case y:
+							returnVal = Math.pow(deadband(primaryController.getY(Hand.kRight)), Constants.JOYSTICK_MULTIPLIER);
+						break;
+					}
+					break;
+				}
+			break;
+			case s:
+				switch (joystick) {
+				case l:
+					switch (axis) {
+						case x:
+							returnVal = Math.pow(deadband(secondaryController.getX(Hand.kLeft)), Constants.JOYSTICK_MULTIPLIER);
+						break;
+						case y:
+							returnVal = Math.pow(deadband(secondaryController.getY(Hand.kLeft)), Constants.JOYSTICK_MULTIPLIER);
+						break;
+					}
+				break;
+				case r:
+					switch (axis) {
+					case x:
+						returnVal = Math.pow(deadband(secondaryController.getX(Hand.kRight)), Constants.JOYSTICK_MULTIPLIER);
+					break;
+					case y:
+						returnVal = Math.pow(deadband(secondaryController.getY(Hand.kRight)), Constants.JOYSTICK_MULTIPLIER);
+					break;
+				}
+				break;
+			}
+			break;
+		}
+		return returnVal;
 	}
 	
 	/**
@@ -126,7 +198,6 @@ public class OI {
 		double returnVal = 0.0;
 		switch (controller){
 			case p:
-				//Primary controller
 				switch (trigger) {
 					case l:
 						returnVal = primaryController.getLT();
@@ -137,7 +208,6 @@ public class OI {
 				}
 			break;
 			case s:
-				//Secondary controller
 				switch (trigger) {
 					case l:
 						returnVal = secondaryController.getLT();
