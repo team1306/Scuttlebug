@@ -24,7 +24,7 @@ public class TankDrive extends CommandBase {
 			if(oi.getTriggerVal(controller.p, trigger.r) >= 0.1) {
 				drivetrain.tankDrive(oi.getTriggerVal(controller.p, trigger.r), oi.getTriggerVal(controller.p, trigger.r));
 			} else if(oi.getTriggerVal(controller.p, trigger.l) >= 0.1) {
-				drivetrain.tankDrive(oi.getTriggerVal(controller.p, trigger.l), oi.getTriggerVal(controller.p, trigger.l));
+				drivetrain.tankDrive(-oi.getTriggerVal(controller.p, trigger.l), -oi.getTriggerVal(controller.p, trigger.l));
 			}
 		} else {
 			drivetrain.tankDrive(oi.getRightJoyVal(controller.p, axis.y), oi.getLeftJoyVal(controller.p, axis.y));
