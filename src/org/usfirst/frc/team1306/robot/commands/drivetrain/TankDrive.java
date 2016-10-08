@@ -31,8 +31,8 @@ public class TankDrive extends CommandBase {
 		}
 		
 		
-		SmartDashboard.putDouble("leftTrigger",oi.getTriggerVal(controller.p, trigger.l));
-		SmartDashboard.putDouble("rightTrigger",oi.getTriggerVal(controller.p, trigger.r));
+		//SmartDashboard.putDouble("leftTrigger",oi.getTriggerVal(controller.p, trigger.l));
+		//SmartDashboard.putDouble("rightTrigger",oi.getTriggerVal(controller.p, trigger.r));
 		
 	}
 
