@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import org.usfirst.frc.team1306.robot.commands.QuickTurn;
 import org.usfirst.frc.team1306.robot.commands.TestCommand;
 
 /**
@@ -81,7 +82,10 @@ public class OI {
 		sbuttonBack = new JoystickButton(primaryController, XboxController.BACK);
 		sbuttonStart = new JoystickButton(primaryController, XboxController.START);
 		
-		pbuttonA.whenPressed(new TestCommand());
+		boolean leftTurn = true;
+		boolean rightTurn = false;
+		pbuttonRB.whenPressed(new QuickTurn(leftTurn));
+		pbuttonLB.whenPressed(new QuickTurn(rightTurn));
 		
 		//pbuttonA.whenPressed(new commandName());
 
