@@ -7,7 +7,7 @@ public class Constants {
 	public final static double JOYSTICK_MULTIPLIER = 1.0;   //Change if too sensitive or not sensitive enough
 	
 	//Turn Constants
-	public final static double TURN_SPEED = 0.635;
+	public final static double TURN_SPEED = 0.628;
 	public final static double TURN_TIME = 0.5;
 	
 	//Autonomous constants
