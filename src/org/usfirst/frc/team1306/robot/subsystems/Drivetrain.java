@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1306.robot.subsystems;
 
+import org.usfirst.frc.team1306.robot.Constants;
 import org.usfirst.frc.team1306.robot.RobotMap;
 import org.usfirst.frc.team1306.robot.commands.drivetrain.TankDrive;
 
@@ -17,6 +18,8 @@ public class Drivetrain extends Subsystem {
 	private final CANTalon[] motors;	
 	private final CANTalon leftmotor1;
 	private final CANTalon rightmotor1;
+	
+	private boolean isPID = false;
 	
 	public Drivetrain() {
 		leftmotor1 = new CANTalon(RobotMap.LEFT_TALON_1_PORT);
@@ -40,6 +43,13 @@ public class Drivetrain extends Subsystem {
 		rightmotor1.changeControlMode(TalonControlMode.PercentVbus);
 		leftmotor1.set(-leftVal);
 		rightmotor1.set(rightVal);
+	}
+	
+	public void DrivePID() {
+		leftmotor1.changeControlMode(TalonControlMode.Speed);
+		rightmotor1.changeControlMode(TalonControlMode.Speed);
+		leftmotor1.setPID(Constants.LEFT_P, Constants.LEFT_I, Constants.LEFT_D);
+		rightmotor1.setPID(Constants.RIGHT_P, Constants.RIGHT_I, Constants.RIGHT_D);
 	}
 	
 	/**
