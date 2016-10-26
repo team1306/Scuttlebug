@@ -40,11 +40,7 @@ public class SmartQuickTurn extends CommandBase {
 				drivetrain.tankDrive(0.5,-0.5);
 				
 			}
-		
-
-			
 		}
-
 	}
 	
 	@Override

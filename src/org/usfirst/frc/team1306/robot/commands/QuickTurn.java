@@ -57,7 +57,7 @@ public class QuickTurn extends CommandBase {
 
 	@Override
 	protected boolean isFinished() {
-	return false;
+		return timer.hasPeriodPassed(time);
 	}
 
 	@Override
