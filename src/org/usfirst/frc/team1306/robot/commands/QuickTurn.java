@@ -8,6 +8,18 @@ import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.Timer;
 
+<<<<<<< HEAD
+=======
+/**
+ * 
+ * Quickly turns right or left.
+ * 
+ * @author Jackson Goth
+ *
+ */
+
+public class QuickTurn extends CommandBase {
+>>>>>>> origin/master
 
 public class QuickTurn extends CommandBase {
 	AHRS ahrs = new AHRS(Port.kMXP); //This is wrong but whatever
@@ -16,6 +28,11 @@ public class QuickTurn extends CommandBase {
 	private final Timer timer;
 	boolean left;
 	
+	/**
+	 * Makes the robot turn about 90 degrees
+	 * @param left
+	 * 		if it should turn left or right. (T or F)
+	 */
 	public QuickTurn(boolean left) {
 		requires(drivetrain);
 		timer = new Timer();
