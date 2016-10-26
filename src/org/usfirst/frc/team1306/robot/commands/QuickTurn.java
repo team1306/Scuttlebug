@@ -2,10 +2,15 @@ package org.usfirst.frc.team1306.robot.commands;
 
 import org.usfirst.frc.team1306.robot.Constants;
 
+import com.kauailabs.navx.frc.AHRS;
+
+import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.Timer;
 
-public class QuickTurn extends CommandBase {
 
+public class QuickTurn extends CommandBase {
+	AHRS ahrs = new AHRS(Port.kMXP); //This is wrong but whatever
 	final double speed;
 	final double time;
 	private final Timer timer;
@@ -36,7 +41,7 @@ public class QuickTurn extends CommandBase {
 
 	@Override
 	protected boolean isFinished() {
-		return timer.hasPeriodPassed(time);
+	return false;
 	}
 
 	@Override

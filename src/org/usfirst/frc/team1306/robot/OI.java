@@ -69,7 +69,7 @@ public class OI {
 		pbuttonX = new JoystickButton(primaryController, XboxController.X);
 		pbuttonY = new JoystickButton(primaryController, XboxController.Y);
 		pbuttonRB = new JoystickButton(primaryController, XboxController.RB);
-		pbuttonLB = new JoystickButton(primaryController, XboxController.LB);
+		pbuttonLB = new JoystickButton(primaryController, XboxController.LB); 
 		pbuttonBack = new JoystickButton(primaryController, XboxController.BACK);
 		pbuttonStart = new JoystickButton(primaryController, XboxController.START);
 		
@@ -84,8 +84,9 @@ public class OI {
 		
 		boolean leftTurn = true;
 		boolean rightTurn = false;
-		pbuttonRB.whenPressed(new QuickTurn(leftTurn));
-		pbuttonLB.whenPressed(new QuickTurn(rightTurn));
+		
+		sbuttonRB.whileHeld(new QuickTurn(leftTurn));
+		sbuttonLB.whileHeld(new QuickTurn(rightTurn));
 		
 		//pbuttonA.whenPressed(new commandName());
 

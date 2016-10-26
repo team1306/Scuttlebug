@@ -1,4 +1,3 @@
-
 package org.usfirst.frc.team1306.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
