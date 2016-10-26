@@ -8,8 +8,7 @@ import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.Timer;
 
-<<<<<<< HEAD
-=======
+
 /**
  * 
  * Quickly turns right or left.
@@ -18,8 +17,8 @@ import edu.wpi.first.wpilibj.Timer;
  *
  */
 
-public class QuickTurn extends CommandBase {
->>>>>>> origin/master
+
+
 
 public class QuickTurn extends CommandBase {
 	AHRS ahrs = new AHRS(Port.kMXP); //This is wrong but whatever
