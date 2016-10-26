@@ -4,6 +4,14 @@ import org.usfirst.frc.team1306.robot.Constants;
 
 import edu.wpi.first.wpilibj.Timer;
 
+/**
+ * 
+ * Quickly turns right or left.
+ * 
+ * @author Jackson Goth
+ *
+ */
+
 public class QuickTurn extends CommandBase {
 
 	final double speed;
@@ -11,6 +19,11 @@ public class QuickTurn extends CommandBase {
 	private final Timer timer;
 	boolean left;
 	
+	/**
+	 * Makes the robot turn about 90 degrees
+	 * @param left
+	 * 		if it should turn left or right. (T or F)
+	 */
 	public QuickTurn(boolean left) {
 		requires(drivetrain);
 		timer = new Timer();
