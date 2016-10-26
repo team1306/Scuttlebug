@@ -72,14 +72,14 @@ public class OI {
 		pbuttonBack = new JoystickButton(primaryController, XboxController.BACK);
 		pbuttonStart = new JoystickButton(primaryController, XboxController.START);
 		
-		sbuttonA = new JoystickButton(primaryController, XboxController.A);
-		sbuttonB = new JoystickButton(primaryController, XboxController.B);
-		sbuttonX = new JoystickButton(primaryController, XboxController.X);
-		sbuttonY = new JoystickButton(primaryController, XboxController.Y);
-		sbuttonRB = new JoystickButton(primaryController, XboxController.RB);
-		sbuttonLB = new JoystickButton(primaryController, XboxController.LB);
-		sbuttonBack = new JoystickButton(primaryController, XboxController.BACK);
-		sbuttonStart = new JoystickButton(primaryController, XboxController.START);
+		sbuttonA = new JoystickButton(secondaryController, XboxController.A);
+		sbuttonB = new JoystickButton(secondaryController, XboxController.B);
+		sbuttonX = new JoystickButton(secondaryController, XboxController.X);
+		sbuttonY = new JoystickButton(secondaryController, XboxController.Y);
+		sbuttonRB = new JoystickButton(secondaryController, XboxController.RB);
+		sbuttonLB = new JoystickButton(secondaryController, XboxController.LB);
+		sbuttonBack = new JoystickButton(secondaryController, XboxController.BACK);
+		sbuttonStart = new JoystickButton(secondaryController, XboxController.START);
 		
 		boolean leftTurn = true;
 		boolean rightTurn = false;
