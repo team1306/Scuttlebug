@@ -1,14 +1,12 @@
 package org.usfirst.frc.team1306.robot.commands;
 
-<<<<<<< HEAD
+
 import org.usfirst.frc.team1306.robot.Constants;
 
 import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.wpilibj.SerialPort.Port;
 
-=======
->>>>>>> origin/master
 /**
  * 
  * Quickly turns to a certain degree measure

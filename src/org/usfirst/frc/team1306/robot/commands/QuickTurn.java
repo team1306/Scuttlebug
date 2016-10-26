@@ -8,10 +8,6 @@ import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.Timer;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 /**
  * 
  * Quickly turns right or left.
@@ -20,12 +16,10 @@ import edu.wpi.first.wpilibj.Timer;
  *
  */
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> origin/master
+
 public class QuickTurn extends CommandBase {
 	AHRS ahrs = new AHRS(Port.kMXP); //This is wrong but whatever
 	final double speed;
