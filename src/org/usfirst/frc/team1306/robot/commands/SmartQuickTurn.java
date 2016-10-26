@@ -1,7 +1,5 @@
 package org.usfirst.frc.team1306.robot.commands;
 
-import org.usfirst.frc.team1306.robot.Constants;
-
 /**
  * 
  * Quickly turns to a certain degree measure
