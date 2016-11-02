@@ -25,7 +25,7 @@ public class TankDrive extends CommandBase {
 				drivetrain.tankDrive(-oi.getTriggerVal(controller.p, trigger.l), -oi.getTriggerVal(controller.p, trigger.l));
 			}
 		} else {
-			drivetrain.tankDrive(oi.getRightJoyVal(controller.p, axis.y), oi.getLeftJoyVal(controller.p, axis.y));
+			drivetrain.tankDrive(oi.getJoyVal(controller.p, joystick.r, axis.y), oi.getJoyVal(controller.p, joystick.l, axis.y));
 		}
 		
 		
