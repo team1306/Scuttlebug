@@ -3,7 +3,6 @@ package org.usfirst.frc.team1306.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-import com.kauailabs.navx.frc.AHRS;
 
 
 /**
