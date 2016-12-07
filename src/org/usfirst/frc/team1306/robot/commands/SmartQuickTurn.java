@@ -3,6 +3,7 @@ package org.usfirst.frc.team1306.robot.commands;
 
 import org.usfirst.frc.team1306.robot.Constants;
 
+
 import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.wpilibj.SerialPort.Port;
@@ -11,7 +12,7 @@ import edu.wpi.first.wpilibj.SerialPort.Port;
  * 
  * Quickly turns to a certain degree measure
  * 
- * @author Sam Roquitte
+ * @author Sam Roquitte Amit Rajesh Jackson Goth
  *
  */
 
