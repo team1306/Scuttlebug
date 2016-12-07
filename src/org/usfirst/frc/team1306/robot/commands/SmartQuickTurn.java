@@ -17,27 +17,36 @@ import edu.wpi.first.wpilibj.SerialPort.Port;
  */
 
 public class SmartQuickTurn extends CommandBase {
-
 	final double speed = 0;
 	final double degree = 0;
-	boolean isDoneTurning = false;
+	boolean done;
 	AHRS ahrs = new AHRS(Port.kMXP);
 	double left_turn, right_turn;
 	
 	public SmartQuickTurn(double degree) {
 		requires(drivetrain);
+		
+	}
+	
+	@Override
+	protected void initialize() {
+		
+	}
+
+	@Override
+	protected void execute() {
 		ahrs = new AHRS(Port.kMXP);
 		double current_angle;
 		double angle_difference;
-		int done = 0;
+		done = false;
 		 left_turn= 0.5;
 		 right_turn=0.5;
 
-		while(done == 0) {
+		while(done == false) {
 			current_angle = ahrs.getAngle();
 			angle_difference = current_angle - degree;
 			if(angle_difference < 1 && angle_difference > -1) {
-				done = 1;
+				done = true;
 				break;
 			}
 			if(angle_difference < -1) {
@@ -52,21 +61,12 @@ public class SmartQuickTurn extends CommandBase {
 
 			
 		}
-	}
-	
-	@Override
-	protected void initialize() {
-		
-	}
-
-	@Override
-	protected void execute() {
 		drivetrain.tankDrive(left_turn, right_turn);
 	}
 
 	@Override
 	protected boolean isFinished() {
-		return isDoneTurning;
+		return done;
 	}
 
 	@Override
