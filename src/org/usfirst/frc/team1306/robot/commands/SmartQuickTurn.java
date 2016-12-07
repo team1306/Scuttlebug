@@ -25,8 +25,8 @@ public class SmartQuickTurn extends CommandBase {
 	public SmartQuickTurn(double degree) {
 		requires(drivetrain);
 		ahrs = new AHRS(Port.kMXP);
-		double current_angle = ahrs.getAngle();
-		double angle_difference = current_angle - degree;
+		double current_angle;
+		double angle_difference;
 		int done = 0;
 		double left_turn= 0.5;
 		double right_turn=0.5;
