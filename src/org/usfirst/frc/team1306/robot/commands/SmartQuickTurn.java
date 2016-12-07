@@ -21,6 +21,7 @@ public class SmartQuickTurn extends CommandBase {
 	final double degree = 0;
 	boolean isDoneTurning = false;
 	AHRS ahrs = new AHRS(Port.kMXP);
+	double left_turn, right_turn;
 	
 	public SmartQuickTurn(double degree) {
 		requires(drivetrain);
@@ -28,8 +29,8 @@ public class SmartQuickTurn extends CommandBase {
 		double current_angle;
 		double angle_difference;
 		int done = 0;
-		double left_turn= 0.5;
-		double right_turn=0.5;
+		 left_turn= 0.5;
+		 right_turn=0.5;
 
 		while(done == 0) {
 			current_angle = ahrs.getAngle();
@@ -49,7 +50,6 @@ public class SmartQuickTurn extends CommandBase {
 			}
 
 			
-			drivetrain.tankDrive(left_turn, right_turn);
 		}
 	}
 	
@@ -60,7 +60,7 @@ public class SmartQuickTurn extends CommandBase {
 
 	@Override
 	protected void execute() {
-		drivetrain.tankDrive(speed, -speed);
+		drivetrain.tankDrive(left_turn, right_turn);
 	}
 
 	@Override
