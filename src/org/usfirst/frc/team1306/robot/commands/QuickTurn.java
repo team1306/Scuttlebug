@@ -32,6 +32,7 @@ public class QuickTurn extends CommandBase {
 	 * @param left
 	 * 		if it should turn left or right. (T or F)
 	 */
+	
 	public QuickTurn(boolean left) {
 		requires(drivetrain);
 		timer = new Timer();

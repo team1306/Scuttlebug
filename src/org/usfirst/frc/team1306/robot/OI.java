@@ -85,7 +85,7 @@ public class OI {
 		boolean leftTurn = true;
 		boolean rightTurn = false;
 		pbuttonRB.whenPressed(new SmartQuickTurn(90));
-		pbuttonLB.whenPressed(new SmartQuickTurn(180));
+		pbuttonLB.whenPressed(new SmartQuickTurn(90));
 		sbuttonRB.whileHeld(new QuickTurn(leftTurn));
 		sbuttonLB.whileHeld(new QuickTurn(rightTurn));
 		
