@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team1306.robot.commands.QuickTurn;
-import org.usfirst.frc.team1306.robot.commands.SmartQuickTurn;
+//import org.usfirst.frc.team1306.robot.commands.SmartQuickTurn;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -84,10 +84,10 @@ public class OI {
 		
 		boolean leftTurn = true;
 		boolean rightTurn = false;
-		pbuttonRB.whenPressed(new SmartQuickTurn(90));
-		pbuttonLB.whenPressed(new SmartQuickTurn(90));
-		sbuttonRB.whileHeld(new QuickTurn(leftTurn));
-		sbuttonLB.whileHeld(new QuickTurn(rightTurn));
+		//pbuttonRB.whenPressed(new SmartQuickTurn(90));
+		//pbuttonLB.whenPressed(new SmartQuickTurn(90));
+		pbuttonRB.whileHeld(new QuickTurn(leftTurn));
+		pbuttonLB.whileHeld(new QuickTurn(rightTurn));
 		
 		//pbuttonA.whenPressed(new commandName());
 
